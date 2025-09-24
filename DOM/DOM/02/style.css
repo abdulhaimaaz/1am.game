@@ -1,0 +1,13 @@
+table ,tr, td{
+    border: 1px solid black;
+    font-size: xx-large
+}
+
+
+div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 80%;
+    margin: 100px;
+}

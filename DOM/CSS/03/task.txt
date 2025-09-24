@@ -1,0 +1,65 @@
+CSS Fundamentals Exercise
+
+Objective:
+Style the given HTML page using CSS based on the requirements below.
+
+HTML Structure:
+- A header with id "main-header" containing an h1
+- A navigation with class "main-nav" containing links
+- A section with class "content" containing:
+  - An article with h2 and paragraph
+  - A div with class "highlight-box" and paragraph
+- A footer with copyright text
+
+Tasks:
+
+1. Basic Styling:
+- Style the main header:
+  - Background color dark gray (#333)
+  - Text color white
+  - Center-aligned text
+  - 20px padding
+
+- Style all links in the main navigation:
+  - Remove underlines
+  - Change color to orange (#ff9900)
+
+- Style the highlight box:
+  - Light gray background (#f4f4f4)
+  - 2px solid dark gray border (#333)
+  - 15px padding
+  - 10px top/bottom margin
+
+2. Box Model Practice:
+- Style the article inside content section:
+  - 80% width
+  - 20px top/bottom margin, auto left/right (centered)
+  - 15px padding
+  - 1px dashed light gray border (#ccc)
+
+- Style the footer:
+  - Dark gray background (#333)
+  - White text
+  - Centered text
+  - 10px padding
+  - No margin
+
+3. Typography:
+- Set default font for whole page to Arial, sans-serif
+- Style all h2 elements:
+  - 24px font size
+  - Dark gray color (#444)
+  - 10px bottom margin
+- Style paragraphs inside content section:
+  - 1.6 line height
+  - 15px bottom margin
+
+Bonus Challenges:
+1. Add hover effect to navigation links (change to #ff6600)
+2. Make highlight box have slightly rounded corners (5px)
+3. Add shadow effect to article
+
+Notes:
+- Create a separate CSS file named styles.css
+- Link it to the HTML file
+- Do not modify the HTML structure

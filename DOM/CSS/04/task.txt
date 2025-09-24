@@ -1,0 +1,125 @@
+Here's your mission: build the pricing section for a gym website. You know, one of those rows of three cards that shows different membership options. We're calling our gym "Flexbox Fitness" (of course).
+
+Here’s what you need to do:
+
+Create a row of three pricing cards. On a desktop, they should sit side-by-side. On a phone, they should stack vertically. The middle card needs to be a bit bigger to stand out. All cards should always be the same height, no matter how much text is inside.
+
+Copy and paste this to get going. Save it as index.html
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flexbox Fitness</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <section class="pricing-container">
+
+        <div class="pricing-plan">
+
+            <h3>Basic</h3>
+
+            <p class="price">$19.99/month</p>
+
+            <ul>
+
+                <li>Access to main gym</li>
+
+                <li>No trainer support</li>
+
+                <li>Free water bottle</li>
+
+            </ul>
+
+            <button>Sign Up</button>
+
+        </div>
+
+        <div class="pricing-plan highlight">
+
+            <h3>Professional</h3>
+
+            <p class="price">$29.99/month</p>
+
+            <ul>
+
+                <li>All gym areas</li>
+
+                <li>1 free training session</li>
+
+                <li>Water bottle & shaker</li>
+
+            </ul>
+
+            <button>Sign Up</button>
+
+        </div>
+
+        <div class="pricing-plan">
+
+            <h3>Enterprise</h3>
+
+            <p class="price">$49.99/month</p>
+
+            <ul>
+
+                <li>24/7 access</li>
+
+                <li>4 training sessions</li>
+
+                <li>Full gear kit</li>
+
+            </ul>
+
+            <button>Sign Up</button>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+
+Nail these in your style.css file:
+
+[ ] Turn .pricing-container into a flexbox parent
+
+[ ] Make the cards sit in a row on desktop
+
+[ ] Make the cards stack on mobile (hint: media query or flex-wrap)
+
+[ ] Center the row of cards on the page
+
+[ ] Make all cards the same height (this should happen automatically)
+
+[ ] Make the middle card (.highlight) wider than the others (use flex-grow or flex-basis)
+
+[ ] Style the cards nicely - add some padding, a border, background color
+
+[ ] Make the button in the middle card a different color
+
+Feeling confident? Try these:
+
+- Add a subtle shadow to make the cards pop off the page
+
+- Put a "MOST POPULAR" badge on the middle card
+
+1. Start with the container! Make it flex first, then worry about the items inside.
+
+2. Use your browser dev tools. Right-click -> Inspect is your best friend for debugging layout.
+
+3. Resize your browser window constantly to test how it looks on mobile.
+
+You've got this. Make it look clean and professional. Can't wait to see what you build!

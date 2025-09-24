@@ -1,0 +1,26 @@
+*{
+    margin: 100px;
+    background-color: blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: #050505;
+}
+
+#high{
+    font-family: monospace;
+    color: beige;
+}
+
+.title{
+    color: aqua;
+}
+
+h1{
+    color: aliceblue;
+    font-family: cursive;
+}
+
+
+
