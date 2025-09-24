@@ -723,7 +723,20 @@
 //   createTable();
 // };
 
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
 
+  const playerName = getQueryParam("playername") || "Player";
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("playerName").textContent = `Welcome ${playerName}!`;
+  });
+
+let err = new Audio('./audio/losing.wav');
+let win = new Audio('./audio/win.wav');
+
+// err.play()
 let score = 0;
 let gameOver = false;
 let cellData = [];
@@ -753,7 +766,7 @@ function createTable() {
   score = 0;
   gameOver = false;
   updateScore();
-  showMessage("Find 1 to win. Click a prime (2–30) and the game ends!");
+  showMessage("Find 1 to win. Click a prime (2-30) and the game ends!");
 }
 
 function createCellData() {
@@ -783,8 +796,10 @@ function checkNumber(e) {
     revealCell(cell, "win");
     gameOver = true;
     showMessage("You win!");
+    win.play()
     revealAll(); // optional: show the whole board when you win
   } else if (isPrime(num) && num <= 30) {
+    err.play()
     revealCell(cell, "lose");
     gameOver = true;
     showMessage(`Game over! You clicked a prime (${num}).`);
@@ -806,6 +821,7 @@ function revealMultiples(n) {
       revealCell(c, "safe");
     }
   });
+  // err.play()
 }
 
 function revealAll() {
