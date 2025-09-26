@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1AM Game</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    @font-face {
+      font-family: "Arcade";
+      src: url("fonts/arcade.ttf") format("truetype");
+    }
+
+    * {
+      font-family: "Arcade", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ✅ Video background */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 100px;
+      color: #95ff00;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 40px;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      margin: 5px 0;
+      padding: 10px;
+    }
+
+    input,
+    button {
+      padding: 12px 18px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin: 8px 0;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    input::placeholder {
+      color: #ddd;
+    }
+
+    button {
+      background: rgba(33, 150, 243, 0.6);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(25, 118, 210, 0.8);
+      transform: scale(1.05);
+    }
+
+    #error {
+      margin-top: 15px;
+      color: #ff4444;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    #bgMusic {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ Video Background -->
+  <video autoplay muted loop id="bgVideo" playsinline>
+    <source src="./img/bgv.mp4" type="video/mp4" />
+  </video>
+
+  <!-- ✅ Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="./audio/ssvid.net--KOAD-dirty-Official-Music-Video [music].mp3" type="audio/mp3" />
+  </audio>
+
+  <center>
+    <h1>1AM GAME</h1>
+    <h2>Enter Player Name</h2>
+  </center>
+
+  <input type="text" id="playerName" placeholder="Your name here..." />
+  <button onclick="startGame()">Start Game</button>
+  <div id="error"></div>
+
+  <script>
+    const video = document.getElementById("bgVideo");
+    const bgMusic = document.getElementById("bgMusic");
+
+    // Slow down video playback
+    video.playbackRate = 0.7;
+
+    // Try autoplay music on load
+    window.addEventListener("load", () => {
+      bgMusic.play().catch(() => {
+        console.log("Autoplay blocked. Waiting for user interaction...");
+      });
+    });
+
+    // Fallback: play music on first click anywhere
+    document.addEventListener(
+      "click",
+      () => {
+        if (bgMusic.paused) {
+          bgMusic.play();
+        }
+      },
+      { once: true }
+    );
+
+    // Start game function
+    function startGame() {
+      const name = document.getElementById("playerName").value.trim();
+      const errorDiv = document.getElementById("error");
+
+      if (!name) {
+        errorDiv.textContent = "Please enter your name before starting!";
+        return;
+      }
+
+      errorDiv.textContent = "";
+      window.location.href = "./Game/index.html?playername=" + encodeURIComponent(name);
+    }
+
+    // Allow pressing Enter to start
+    document.getElementById("playerName").addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        startGame();
+      }
+    });
+  </script>
+</body>
+</html>
