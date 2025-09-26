@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maze Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="1/game.html">
+</head>
+<body>
+  <div id="welcome"></div>
+  <h1 id="playerDisplay"></h1>
+
+
+  <script>
+  // Function to get query params
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const playerName = getQueryParam("playername") || "Player";
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("playerDisplay").textContent = `Welcomee ${playerName}!`;
+  });
+</script>
+
+</body>
+</html>
